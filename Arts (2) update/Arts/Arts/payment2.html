@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 400px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            text-align: left;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #8f50ec;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #722bd6;
+        }
+
+        .success-message {
+            display: none;
+            text-align: center;
+        }
+
+        .success-message img {
+            width: 100px;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container" id="paymentContainer">  
+        <h1>Payment Method</h1>
+        <form id="paymentForm">
+            <label for="cardname">Name on Card:</label>
+            <input type="text" id="cardname" name="cardname" required>
+            
+            <label for="cardnumber">Card Number:</label>
+            <input type="text" id="cardnumber" name="cardnumber" required>
+            
+            <label for="expiry">Expiration Date:</label>
+            <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
+            
+            <label for="Total">Total Amount:</label>
+            <input type="text" id="Total" name="Total" required>
+            
+            <button type="submit">Submit Payment</button>
+        </form>
+    </div>
+
+    <div class="success-message" id="successMessage">
+        <h2>Payment Successful!</h2>
+        <p>Thank you for your payment.</p>
+        <img src="success.png" alt="Payment Success">
+    </div>
+
+    <script>
+        document.getElementById('paymentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Hide the form container
+            document.getElementById('paymentContainer').style.display = 'none';
+
+            // Show the success message
+            document.getElementById('successMessage').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

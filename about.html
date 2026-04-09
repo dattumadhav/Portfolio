@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | BATHULA DATTA MADHAV</title>
+    <meta name="description" content="Learn more about Bathula Datta Madhav — Java Full Stack Developer, innovator, gold medal winner, and B.Tech IT student at MLRIT Hyderabad.">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Navbar -->
+    <header class="navbar scrolled" id="navbar">
+        <div class="container nav-container">
+            <h1 class="logo"><a href="index.html">Madhav<span>.dev</span></a></h1>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="about.html" style="color: var(--accent-color);">About</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#experience">Experience</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="theme-toggle" id="theme-toggle">
+                <i class="fas fa-sun" id="theme-icon"></i>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Dedicated About Section -->
+    <section class="dedicated-about section" style="padding-top: 150px; min-height: 80vh;">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-down" style="display: block;">Behind the Code</h2>
+            
+            <div class="about-page-grid">
+                
+                <!-- Interactive Image Gallery -->
+                <div class="about-image-gallery" data-aos="fade-right">
+                    <div class="gallery-main" style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(102, 252, 241, 0.3); transition: transform 0.5s; cursor: crosshair;">
+                        <!-- Interactive floating badge -->
+                        <div style="position: absolute; top: 15px; right: 15px; background: rgba(11,12,16,0.85); backdrop-filter: blur(8px); padding: 8px 12px; border-radius: 10px; border: 1px solid var(--accent-color); color: #fff; font-size: 0.85rem; font-weight: 600; z-index: 10; display: flex; align-items: center; gap: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.5);">
+                            <i class="fas fa-medal" style="color: gold;"></i> Award-Winning Innovator
+                        </div>
+                        <img src="about.jpeg" alt="Bathula Datta Madhav" style="width: 100%; height: 400px; object-fit: cover; object-position: top; transition: transform 0.8s ease;" loading="lazy">
+                        <div class="overlay" style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 25px; background: linear-gradient(transparent, rgba(11, 12, 16, 0.95)); transition: opacity 0.5s; pointer-events: none;">
+                            <h3 style="color: var(--accent-color); font-size: 1.6rem; letter-spacing: 1px;">BATHULA DATTA MADHAV</h3>
+                            <p style="color: #fff; font-size: 1.05rem; margin-top: 5px; font-weight: 300;">Java Full Stack Developer</p>
+                        </div>
+                    </div>
+                    <div class="gallery-thumbnails" style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                        <div style="flex: 1; border-radius: 12px; overflow: hidden; border: 2px solid transparent; transition: all 0.3s; position: relative; cursor: pointer;" class="thumbnail hover-glow">
+                            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400" alt="Backend Dev" style="width: 100%; height: 110px; object-fit: cover; filter: brightness(0.5); transition: all 0.4s;">
+                            <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 1.1rem; text-shadow: 0 2px 4px rgba(0,0,0,0.8); pointer-events: none;">Backend Dev</div>
+                        </div>
+                        <div style="flex: 1; border-radius: 12px; overflow: hidden; border: 2px solid transparent; transition: all 0.3s; position: relative; cursor: pointer;" class="thumbnail hover-glow">
+                            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400" alt="Innovation" style="width: 100%; height: 110px; object-fit: cover; filter: brightness(0.5); transition: all 0.4s;">
+                            <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 1.1rem; text-shadow: 0 2px 4px rgba(0,0,0,0.8); pointer-events: none;">System Design</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Small Description -->
+                <div class="about-page-text" data-aos="fade-left">
+                    <div style="background: var(--card-bg); backdrop-filter: blur(10px); padding: 3rem; border-radius: 20px; border: 1px solid var(--border-color); height: 100%;">
+                        <h3 style="color: var(--accent-color); font-size: 1.8rem; margin-bottom: 1rem;">My Journey</h3>
+                        <p style="font-size: 1.15rem; margin-bottom: 1.5rem; line-height: 1.8;">
+                            I am a highly adaptable and detail-oriented Information Technology student specializing in <strong style="color: var(--text-primary);">Java Full Stack Development</strong>. My core passion lies in breaking down complex problems and turning them into scalable, high-performance web applications.
+                        </p>
+                        <p style="font-size: 1.15rem; margin-bottom: 1.5rem; line-height: 1.8;">
+                            With robust knowledge in <strong style="color: var(--text-primary);">Data Structures & Algorithms</strong>, backend architecture, and modern frontend styling, I bring an innovative approach to every project. Whether it's developing AI-powered tools or crafting seamless interfaces, I thrive in dynamic environments.
+                        </p>
+                        <div class="strengths" style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 2rem;">
+                            <span style="background: rgba(102, 252, 241, 0.1); color: var(--accent-color); padding: 8px 15px; border-radius: 20px; font-weight: 600; border: 1px solid var(--border-color); transition: all 0.3s; cursor: default;" onmouseover="this.style.background='var(--accent-color)';this.style.color='#0b0c10';" onmouseout="this.style.background='rgba(102, 252, 241, 0.1)';this.style.color='var(--accent-color)';">🚀 Quick Learner</span>
+                            <span style="background: rgba(102, 252, 241, 0.1); color: var(--accent-color); padding: 8px 15px; border-radius: 20px; font-weight: 600; border: 1px solid var(--border-color); transition: all 0.3s; cursor: default;" onmouseover="this.style.background='var(--accent-color)';this.style.color='#0b0c10';" onmouseout="this.style.background='rgba(102, 252, 241, 0.1)';this.style.color='var(--accent-color)';">🧩 Problem Solver</span>
+                            <span style="background: rgba(102, 252, 241, 0.1); color: var(--accent-color); padding: 8px 15px; border-radius: 20px; font-weight: 600; border: 1px solid var(--border-color); transition: all 0.3s; cursor: default;" onmouseover="this.style.background='var(--accent-color)';this.style.color='#0b0c10';" onmouseout="this.style.background='rgba(102, 252, 241, 0.1)';this.style.color='var(--accent-color)';">💡 Innovator</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Hobbies Section -->
+            <div class="hobbies-section" data-aos="fade-up" style="margin-top: 4rem;">
+                <h3 style="color: var(--accent-color); font-size: 1.8rem; margin-bottom: 2rem; text-align: center;">⚡ Hobbies & Interests</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
+
+                    <div style="background: var(--card-bg); backdrop-filter: blur(10px); border: 1px solid var(--border-color); border-radius: 15px; padding: 2rem; text-align: center; transition: all 0.3s;"
+                        onmouseover="this.style.transform='translateY(-8px)';this.style.borderColor='var(--accent-color)';"
+                        onmouseout="this.style.transform='translateY(0)';this.style.borderColor='var(--border-color)';">
+                        <i class="fas fa-microchip" style="font-size: 2.5rem; color: var(--accent-color); margin-bottom: 1rem; display:block;"></i>
+                        <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">Researching New Tech</h4>
+                        <p style="font-size: 0.9rem; opacity: 0.75;">Staying up-to-date with the latest breakthroughs in AI, software, and emerging technologies.</p>
+                    </div>
+
+                    <div style="background: var(--card-bg); backdrop-filter: blur(10px); border: 1px solid var(--border-color); border-radius: 15px; padding: 2rem; text-align: center; transition: all 0.3s;"
+                        onmouseover="this.style.transform='translateY(-8px)';this.style.borderColor='var(--accent-color)';"
+                        onmouseout="this.style.transform='translateY(0)';this.style.borderColor='var(--border-color)';">
+                        <i class="fas fa-camera" style="font-size: 2.5rem; color: var(--accent-color); margin-bottom: 1rem; display:block;"></i>
+                        <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">Photography</h4>
+                        <p style="font-size: 0.9rem; opacity: 0.75;">Capturing moments and exploring visual storytelling through the lens.</p>
+                    </div>
+
+                    <div style="background: var(--card-bg); backdrop-filter: blur(10px); border: 1px solid var(--border-color); border-radius: 15px; padding: 2rem; text-align: center; transition: all 0.3s;"
+                        onmouseover="this.style.transform='translateY(-8px)';this.style.borderColor='var(--accent-color)';"
+                        onmouseout="this.style.transform='translateY(0)';this.style.borderColor='var(--border-color)';">
+                        <i class="fas fa-code" style="font-size: 2.5rem; color: var(--accent-color); margin-bottom: 1rem; display:block;"></i>
+                        <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">Solving DSA</h4>
+                        <p style="font-size: 0.9rem; opacity: 0.75;">Polishing problem-solving skills by tackling complex data structures and algorithms.</p>
+                    </div>
+
+                    <div style="background: var(--card-bg); backdrop-filter: blur(10px); border: 1px solid var(--border-color); border-radius: 15px; padding: 2rem; text-align: center; transition: all 0.3s;"
+                        onmouseover="this.style.transform='translateY(-8px)';this.style.borderColor='var(--accent-color)';"
+                        onmouseout="this.style.transform='translateY(0)';this.style.borderColor='var(--border-color)';">
+                        <i class="fas fa-newspaper" style="font-size: 2.5rem; color: var(--accent-color); margin-bottom: 1rem; display:block;"></i>
+                        <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">Watching News</h4>
+                        <p style="font-size: 0.9rem; opacity: 0.75;">Keeping a keen eye on global events, tech industry trends, and world developments.</p>
+                    </div>
+
+                    <div style="background: var(--card-bg); backdrop-filter: blur(10px); border: 1px solid var(--border-color); border-radius: 15px; padding: 2rem; text-align: center; transition: all 0.3s;"
+                        onmouseover="this.style.transform='translateY(-8px)';this.style.borderColor='var(--accent-color)';"
+                        onmouseout="this.style.transform='translateY(0)';this.style.borderColor='var(--border-color)';">
+                        <i class="fas fa-book-open" style="font-size: 2.5rem; color: var(--accent-color); margin-bottom: 1rem; display:block;"></i>
+                        <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">Reading Books</h4>
+                        <p style="font-size: 0.9rem; opacity: 0.75;">Diving into books on technology, self-growth, and innovation to constantly expand knowledge.</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Bathula Datta Madhav. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/dattumadhav" target="_blank"><i class="fab fa-github"></i> github.com/dattumadhav</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Use inline logic identical to script.js to avoid issues, plus about page specials -->
+    <script>
+        // Init AOS
+        AOS.init({ duration: 1000, once: true, offset: 100 });
+
+        // Particles
+        particlesJS('particles-js', {
+            "particles": {"number": {"value": 50,"density": {"enable": true,"value_area": 800}},"color": {"value": "#66fcf1"},"shape": {"type": "circle"},"opacity": {"value": 0.5,"random": false,"anim": {"enable": true,"speed": 1,"opacity_min": 0.1,"sync": false}},"size": {"value": 3,"random": true,"anim": {"enable": false,"speed": 40,"size_min": 0.1,"sync": false}},"line_linked": {"enable": true,"distance": 150,"color": "#45a29e","opacity": 0.4,"width": 1},"move": {"enable": true,"speed": 2,"direction": "none","random": false,"straight": false,"out_mode": "out","bounce": false}},
+            "interactivity": {"detect_on": "canvas","events": {"onhover": {"enable": true,"mode": "grab"},"onclick": {"enable": true,"mode": "push"},"resize": true},"modes": {"grab": {"distance": 140,"line_linked": {"opacity": 1}},"bubble": {"distance": 400,"size": 40,"duration": 2,"opacity": 8,"speed": 3},"repulse": {"distance": 200,"duration": 0.4},"push": {"particles_nb": 4},"remove": {"particles_nb": 2}}},
+            "retina_detect": true
+        });
+
+        // Hamburger Menu
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            const icon = hamburger.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+            if (document.body.classList.contains('light-theme')) {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            } else {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            }
+        });
+
+        // Interactive image hover effect for about page
+        const galleryMain = document.querySelector('.gallery-main');
+        const mainImg = galleryMain.querySelector('img');
+        const thumbnails = document.querySelectorAll('.thumbnail');
+
+        galleryMain.addEventListener('mousemove', (e) => {
+            const rect = galleryMain.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            // Subtle zoom and pan effect
+            mainImg.style.transformOrigin = `${(x / rect.width) * 100}% ${(y / rect.height) * 100}%`;
+            mainImg.style.transform = 'scale(1.15)';
+        });
+
+        galleryMain.addEventListener('mouseleave', () => {
+            mainImg.style.transformOrigin = 'center center';
+            mainImg.style.transform = 'scale(1)';
+        });
+
+        // Add hover glow to thumbnails
+        thumbnails.forEach(thumb => {
+            thumb.addEventListener('mouseenter', () => {
+                thumb.style.borderColor = 'var(--accent-color)';
+                thumb.style.boxShadow = '0 5px 15px rgba(102, 252, 241, 0.4)';
+                thumb.querySelector('img').style.filter = 'brightness(1)';
+                thumb.querySelector('img').style.transform = 'scale(1.1)';
+            });
+            thumb.addEventListener('mouseleave', () => {
+                thumb.style.borderColor = 'transparent';
+                thumb.style.boxShadow = 'none';
+                thumb.querySelector('img').style.filter = 'brightness(0.7)';
+                thumb.querySelector('img').style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

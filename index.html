@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BATHULA DATTA MADHAV | Java Full Stack Developer</title>
+    <!-- SEO Meta -->
+    <meta name="description" content="Portfolio of Bathula Datta Madhav — Java Full Stack Developer skilled in Java, JavaScript, Python, MySQL, DSA. Building scalable web apps. Available for freelance & full-time.">
+    <meta name="keywords" content="Java Full Stack Developer, Portfolio, Web Development, DSA, MySQL, Hyderabad, MLRIT">
+    <meta name="author" content="Bathula Datta Madhav">
+    <!-- Open Graph / Social Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Bathula Datta Madhav | Java Full Stack Developer">
+    <meta property="og:description" content="Building scalable, high-performance web applications that solve real-world problems.">
+    <meta property="og:image" content="about.jpeg">
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dark-theme">
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
+
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <h1 class="logo">Madhav<span>.dev</span></h1>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="chatbot.html" style="color:var(--accent-color); font-weight:bold;">🤖 Chatbot</a></li>
+            </ul>
+            <div class="theme-toggle" id="theme-toggle">
+                <i class="fas fa-sun" id="theme-icon"></i>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero section">
+        <div class="container hero-content">
+            <h2 data-aos="fade-up">Hello, I'm</h2>
+            <h1 class="name-title" data-aos="fade-up" data-aos-delay="100">BATHULA DATTA<br>MADHAV</h1>
+            <h3 class="role-title" data-aos="fade-up" data-aos-delay="200">
+                <span class="typing-text"></span>
+            </h3>
+            <p class="tagline" data-aos="fade-up" data-aos-delay="300"
+                style="font-size: 1.25rem; max-width: 600px; margin: 0 auto 2rem auto; font-weight: 300; letter-spacing: 0.5px;">
+                I build scalable, high-performance web applications that solve real-world problems.
+            </p>
+            <div class="hero-btns" data-aos="fade-up" data-aos-delay="400">
+                <a href="#projects" class="btn primary-btn">View Projects</a>
+                <a href="#contact" class="btn secondary-btn">Contact Me</a>
+                <!-- Resume Download Placeholder -->
+                <a href="#" class="btn outline-btn" download><i class="fas fa-download"></i> Download Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-right">About Me</h2>
+            <div class="about-grid">
+                <div class="about-image" data-aos="zoom-in">
+                    <img src="about.jpeg" alt="Madhav Profile Photo" class="about-profile-img"
+                        style="object-position: top;" loading="lazy">
+                </div>
+                <div class="about-text" data-aos="fade-left">
+                    <p>
+                        Adaptable and detail-oriented Information Technology student with strong problem-solving skills
+                        and a positive attitude. I am eager to contribute to innovative projects and thrive in dynamic
+                        environments. My journey in tech is driven by a passion for continuous learning and turning
+                        complex problems into elegant solutions.
+                    </p>
+                    <ul class="strengths-list">
+                        <li><i class="fas fa-check-circle"></i> Strong Problem Solving (DSA)</li>
+                        <li><i class="fas fa-check-circle"></i> Quick Learner & Adaptable</li>
+                        <li><i class="fas fa-check-circle"></i> Strong Work Ethic</li>
+                        <li><i class="fas fa-check-circle"></i> Backend Development</li>
+                    </ul>
+                    <div class="hobbies-row" style="margin-top: 1.8rem;">
+                        <h4 style="color: var(--accent-color); margin-bottom: 1rem; font-size: 1.1rem; letter-spacing: 0.5px;">⚡ Hobbies & Interests</h4>
+                        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                            <span class="hobby-tag"><i class="fas fa-microchip"></i> Researching New Tech</span>
+                            <span class="hobby-tag"><i class="fas fa-newspaper"></i> Watching News</span>
+                            <span class="hobby-tag"><i class="fas fa-book-open"></i> Reading Books</span>
+                            <span class="hobby-tag"><i class="fas fa-camera"></i> Photography</span>
+                            <span class="hobby-tag"><i class="fas fa-code"></i> Solving DSA</span>
+                        </div>
+                    </div>
+                    <a href="about.html" class="btn primary-btn" style="margin-top: 2rem;">🚀 Read More About Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-down">My Skills</h2>
+            <div class="skills-grid">
+
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                    <h3><i class="fas fa-code"></i> Languages</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">PHP</span>
+                    </div>
+                </div>
+
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                    <h3><i class="fas fa-database"></i> Core & Backend</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Data Structures & Algorithms</span>
+                        <span class="skill-tag">MySQL</span>
+                    </div>
+                </div>
+
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+                    <h3><i class="fas fa-tools"></i> Tools</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Git & GitHub</span>
+                        <span class="skill-tag">Maven</span>
+                        <span class="skill-tag">Jenkins</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Eclipse</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-down">What I can do for you</h2>
+            <div class="services-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;">
+
+                <div class="service-card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-aos="fade-up"
+                    data-aos-delay="100"
+                    style="background: var(--card-bg); padding: 2.5rem 1.5rem; border-radius: 15px; border: 1px solid var(--border-color); text-align: center; backdrop-filter: blur(10px); transition: transform 0.3s; transform-style: preserve-3d;">
+                    <i class="fas fa-globe"
+                        style="font-size: 3rem; color: var(--accent-color); margin-bottom: 1rem; transform: translateZ(30px);"></i>
+                    <h3 style="margin-bottom: 1rem; transform: translateZ(20px);">🌐 Web Development</h3>
+                    <p style="font-size: 0.95rem; opacity: 0.8; transform: translateZ(10px);">Full stack interactive
+                        applications built with modern frontend frameworks and responsive UI.</p>
+                </div>
+
+                <div class="service-card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-aos="fade-up"
+                    data-aos-delay="200"
+                    style="background: var(--card-bg); padding: 2.5rem 1.5rem; border-radius: 15px; border: 1px solid var(--border-color); text-align: center; backdrop-filter: blur(10px); transition: transform 0.3s; transform-style: preserve-3d;">
+                    <i class="fas fa-server"
+                        style="font-size: 3rem; color: var(--accent-color); margin-bottom: 1rem; transform: translateZ(30px);"></i>
+                    <h3 style="margin-bottom: 1rem; transform: translateZ(20px);">⚙️ Backend APIs</h3>
+                    <p style="font-size: 0.95rem; opacity: 0.8; transform: translateZ(10px);">Robust, scalable, and
+                        secure backend architectures using Java.</p>
+                </div>
+
+                <div class="service-card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-aos="fade-up"
+                    data-aos-delay="300"
+                    style="background: var(--card-bg); padding: 2.5rem 1.5rem; border-radius: 15px; border: 1px solid var(--border-color); text-align: center; backdrop-filter: blur(10px); transition: transform 0.3s; transform-style: preserve-3d;">
+                    <i class="fas fa-shopping-cart"
+                        style="font-size: 3rem; color: var(--accent-color); margin-bottom: 1rem; transform: translateZ(30px);"></i>
+                    <h3 style="margin-bottom: 1rem; transform: translateZ(20px);">🛒 eCommerce</h3>
+                    <p style="font-size: 0.95rem; opacity: 0.8; transform: translateZ(10px);">High-conversion online
+                        stores with optimized user funnels and secure payment gateways.</p>
+                </div>
+
+                <div class="service-card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-aos="fade-up"
+                    data-aos-delay="400"
+                    style="background: var(--card-bg); padding: 2.5rem 1.5rem; border-radius: 15px; border: 1px solid var(--border-color); text-align: center; backdrop-filter: blur(10px); transition: transform 0.3s; transform-style: preserve-3d;">
+                    <i class="fas fa-paint-brush"
+                        style="font-size: 3rem; color: var(--accent-color); margin-bottom: 1rem; transform: translateZ(30px);"></i>
+                    <h3 style="margin-bottom: 1rem; transform: translateZ(20px);">🎨 UI/UX Design</h3>
+                    <p style="font-size: 0.95rem; opacity: 0.8; transform: translateZ(10px);">Modern, clean, and
+                        interactive websites featuring glassmorphism and stunning animations.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-right">Featured Projects</h2>
+            <div class="project-grid">
+
+                <!-- New AI Project -->
+                <div class="project-card featured-ai-card" data-tilt data-tilt-max="5" data-aos="zoom-in"
+                    data-aos-delay="50">
+                    <div class="project-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800"
+                            alt="AI Research Assistant" class="project-interactive-img" loading="lazy">
+                        <div class="status-badge">Currently Working On</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>AI Multimodal Research Assistant</h3>
+                        <div class="prob-sol-wrapper"
+                            style="margin-top: 10px; margin-bottom: 15px; font-size: 0.95rem; line-height: 1.5;">
+                            <p style="margin-bottom: 5px;"><strong>❌ Problem:</strong> Researchers waste hours manually
+                                parsing lengthy PDFs and uncaptioned experiment videos.</p>
+                            <p style="margin-bottom: 5px;"><strong>✔️ Solution:</strong> Engineered a robust AI platform
+                                that automates PDF summaries, visual mind maps, and extracts accurate video captions.
+                            </p>
+                            <p style="margin-bottom: 0; color: var(--accent-color);"><strong>🏆 Result:</strong> Massive
+                                reduction in preliminary research time, drastically accelerating workflows.</p>
+                        </div>
+                        <div class="tech-stack">
+                            <span>Python</span><span>AI/NLP</span><span>Machine
+                                Learning</span><span>React</span><span>API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn-small"><i class="fas fa-hammer"></i> In Development</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 1 (Canva Chronicles) -->
+                <div class="project-card" data-tilt data-tilt-max="5" data-aos="flip-left" data-aos-delay="100">
+                    <div class="project-img-wrapper">
+                        <a href="Arts%20(2)%20update/Arts/Arts/index.html" target="_blank">
+                            <img src="Arts%20(2)%20update/Arts/Arts/p1.jpg" alt="Canva Chronicles"
+                                class="project-interactive-img"
+                                onerror="this.src='https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800';">
+                        </a>
+                    </div>
+                    <div class="project-content">
+                        <h3>Canva Chronicles (Art Gallery)</h3>
+                        <div class="prob-sol-wrapper"
+                            style="margin-top: 10px; margin-bottom: 15px; font-size: 0.95rem; line-height: 1.5;">
+                            <p style="margin-bottom: 5px;"><strong>❌ Problem:</strong> Upcoming artists struggle to find
+                                a centralized, engaging online platform to showcase their work.</p>
+                            <p style="margin-bottom: 5px;"><strong>✔️ Solution:</strong> Developed Canva Chronicles, a
+                                deeply interactive art gallery platform supporting fast browsing and backend data
+                                management.</p>
+                            <p style="margin-bottom: 0; color: var(--accent-color);"><strong>🏆 Result:</strong> 40%
+                                improved viewer retention through optimized UI and seamless SQL storage integration.</p>
+                        </div>
+                        <div class="tech-stack">
+                            <span>HTML</span><span>CSS</span><span>JS</span><span>PHP</span><span>MySQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="Arts%20(2)%20update/Arts/Arts/index.html" target="_blank" class="btn-small"><i
+                                    class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="btn-small outline"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 (Book Wise) -->
+                <div class="project-card" data-tilt data-tilt-max="5" data-aos="flip-left" data-aos-delay="200">
+                    <div class="project-img-wrapper">
+                        <a href="Bookwise/Bookwise/signup.html" target="_blank">
+                            <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800"
+                                alt="Bookwise Recommendation" class="project-interactive-img">
+                        </a>
+                    </div>
+                    <div class="project-content">
+                        <h3>Book Wise Recommendation</h3>
+                        <div class="prob-sol-wrapper"
+                            style="margin-top: 10px; margin-bottom: 15px; font-size: 0.95rem; line-height: 1.5;">
+                            <p style="margin-bottom: 5px;"><strong>❌ Problem:</strong> Readers often suffer from choice
+                                paralysis due to generic, unfiltered book suggestions.</p>
+                            <p style="margin-bottom: 5px;"><strong>✔️ Solution:</strong> Built a data-driven
+                                recommendation engine using algorithmic filtering inside a scalable Java backend.</p>
+                            <p style="margin-bottom: 0; color: var(--accent-color);"><strong>🏆 Result:</strong>
+                                Accurately matches user preferences, elevating the digital library experience
+                                efficiently.</p>
+                        </div>
+                        <div class="tech-stack">
+                            <span>Java</span><span>Algorithms</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="Bookwise/Bookwise/signup.html" target="_blank" class="btn-small"><i
+                                    class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="btn-small outline"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 (Simon Game) -->
+                <div class="project-card" data-tilt data-tilt-max="5" data-aos="flip-left" data-aos-delay="300">
+                    <div class="project-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1611996575749-79a3a250f948?w=800" alt="Simon Game"
+                            class="project-interactive-img">
+                    </div>
+                    <div class="project-content">
+                        <h3>Simon Game</h3>
+                        <div class="prob-sol-wrapper"
+                            style="margin-top: 10px; margin-bottom: 15px; font-size: 0.95rem; line-height: 1.5;">
+                            <p style="margin-bottom: 5px;"><strong>❌ Problem:</strong> Lack of engaging, cross-browser
+                                browser-based interactive tools for demonstrating raw JS logic.</p>
+                            <p style="margin-bottom: 5px;"><strong>✔️ Solution:</strong> Developed a sleek, interactive
+                                recreation of the classic Simon memory game managing strict state arrays natively.</p>
+                            <p style="margin-bottom: 0; color: var(--accent-color);"><strong>🏆 Result:</strong>
+                                0-latency input handling proving advanced DOM manipulation expertise.</p>
+                        </div>
+                        <div class="tech-stack">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn-small"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="btn-small outline"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 (Lovely Movies) -->
+                <div class="project-card" data-tilt data-tilt-max="5" data-aos="flip-left" data-aos-delay="400">
+                    <div class="project-img-wrapper">
+                        <a href="02.lovely-movies/index.html" target="_blank">
+                            <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800"
+                                alt="Lovely Movies" class="project-interactive-img">
+                        </a>
+                    </div>
+                    <div class="project-content">
+                        <h3>Lovely Movies</h3>
+                        <div class="prob-sol-wrapper"
+                            style="margin-top: 10px; margin-bottom: 15px; font-size: 0.95rem; line-height: 1.5;">
+                            <p style="margin-bottom: 5px;"><strong>❌ Problem:</strong> Many cinema-oriented websites are
+                                either severely outdated or lack responsive design paradigms.</p>
+                            <p style="margin-bottom: 5px;"><strong>✔️ Solution:</strong> Engineered "Lovely Movies",
+                                utilizing modern UI patterns, vivid CSS grids, and mobile-first logic.</p>
+                            <p style="margin-bottom: 0; color: var(--accent-color);"><strong>🏆 Result:</strong> High
+                                fidelity streaming-app interface that perfectly conforms to all screen resolutions.</p>
+                        </div>
+                        <div class="tech-stack">
+                            <span>HTML</span><span>CSS</span><span>JS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="02.lovely-movies/index.html" target="_blank" class="btn-small"><i
+                                    class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="btn-small outline"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Education Section -->
+    <section id="experience" class="exp-edu section">
+        <div class="container">
+            <div class="timeline-grid">
+
+                <div class="timeline-section" data-aos="fade-right">
+                    <h2 class="section-title">Experience & Achievements</h2>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h4>Software Intern</h4>
+                        <p class="timeline-org">Plasmid</p>
+                        <p class="timeline-desc">Contributed to software development processes, gaining practical skills
+                            in real-world application building and collaborative teamwork.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h4>1st Prize in Innovation Event (Plastic to Electricity)</h4>
+                        <p class="timeline-desc">Awarded a gold medal by the local MLA and a ₹15,000 cash prize for my
+                            groundbreaking research on converting plastic into electricity. This major achievement was
+                            officially recognized and published in the local newspaper.</p>
+                        <a href="Certificartions/my%20news(EWB%20Forum%20event%20).jpg" target="_blank"
+                            class="btn-small outline"
+                            style="margin-top: 15px; display: inline-flex; align-items: center; gap: 8px;">
+                            <i class="fas fa-newspaper"></i> View Newspaper Article
+                        </a>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h4>Shortlisted for CIE Innovation Competition</h4>
+                        <p class="timeline-desc">Developed a VR therapy project that was shortlisted for the prestigious
+                            CIE Innovation Competition.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-section" data-aos="fade-left">
+                    <h2 class="section-title">Education</h2>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h4>B.Tech in Information Technology</h4>
+                        <p class="timeline-org">MLR Institution of Technology, Hyderabad | 2022–2026</p>
+                        <p class="timeline-desc">CGPA: 8.33</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h4>Intermediate</h4>
+                        <p class="timeline-org">SR Junior College, Nizamabad | 2020–2022</p>
+                        <p class="timeline-desc">Percentage: 75.8%</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h4>SSC</h4>
+                        <p class="timeline-org">Sri Chaitanya High School, Kanigiri | 2020</p>
+                        <p class="timeline-desc">GPA: 10</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- GitHub Stats Section -->
+    <section id="github-stats" class="github-stats section">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-down">GitHub Activity</h2>
+            <div class="stats-wrapper"
+                style="display: flex; flex-direction: column; align-items: center; gap: 2rem; margin-top: 3rem;">
+                <img src="https://github-readme-stats.vercel.app/api?username=dattumadhav&theme=radical&show_icons=true&hide_border=true&bg_color=0b0c10"
+                    alt="GitHub Stats"
+                    style="max-width: 100%; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);"
+                    data-aos="zoom-in" data-aos-delay="100">
+                <div style="background: rgba(11,12,16,0.6); padding: 1.5rem; border-radius: 10px; width: 100%; max-width: 800px; text-align: center; border: 1px solid var(--border-color);"
+                    data-aos="zoom-in" data-aos-delay="200">
+                    <img src="https://ghchart.rshah.org/dattumadhav" alt="GitHub Contribution Chart"
+                        style="width: 100%; filter: hue-rotate(130deg) brightness(1.2);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- My Process Section -->
+    <section id="process" class="process section">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-down">My Process</h2>
+            <div class="process-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 3rem; position: relative;">
+
+                <div class="process-step" data-aos="fade-up" data-aos-delay="100"
+                    style="text-align: center; background: rgba(102, 252, 241, 0.05); padding: 2rem; border-radius: 50%; width: 200px; height: 200px; margin: 0 auto; display: flex; flex-direction: column; justify-content: center; border: 2px dashed var(--border-color); position: relative;">
+                    <div
+                        style="position: absolute; top: -10px; right: -10px; background: var(--accent-color); color: #000; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem;">
+                        1</div>
+                    <i class="fas fa-search"
+                        style="font-size: 2.5rem; color: var(--accent-color); margin-bottom: 10px;"></i>
+                    <h4 style="margin: 0; font-size: 1rem;">Understand</h4>
+                </div>
+
+                <div class="process-step" data-aos="fade-up" data-aos-delay="200"
+                    style="text-align: center; background: rgba(102, 252, 241, 0.05); padding: 2rem; border-radius: 50%; width: 200px; height: 200px; margin: 0 auto; display: flex; flex-direction: column; justify-content: center; border: 2px dashed var(--border-color); position: relative;">
+                    <div
+                        style="position: absolute; top: -10px; right: -10px; background: var(--accent-color); color: #000; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem;">
+                        2</div>
+                    <i class="fas fa-drafting-compass"
+                        style="font-size: 2.5rem; color: var(--accent-color); margin-bottom: 10px;"></i>
+                    <h4 style="margin: 0; font-size: 1rem;">Plan Arch</h4>
+                </div>
+
+                <div class="process-step" data-aos="fade-up" data-aos-delay="300"
+                    style="text-align: center; background: rgba(102, 252, 241, 0.05); padding: 2rem; border-radius: 50%; width: 200px; height: 200px; margin: 0 auto; display: flex; flex-direction: column; justify-content: center; border: 2px dashed var(--border-color); position: relative;">
+                    <div
+                        style="position: absolute; top: -10px; right: -10px; background: var(--accent-color); color: #000; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem;">
+                        3</div>
+                    <i class="fas fa-laptop-code"
+                        style="font-size: 2.5rem; color: var(--accent-color); margin-bottom: 10px;"></i>
+                    <h4 style="margin: 0; font-size: 1rem;">Develop</h4>
+                </div>
+
+                <div class="process-step" data-aos="fade-up" data-aos-delay="400"
+                    style="text-align: center; background: rgba(102, 252, 241, 0.05); padding: 2rem; border-radius: 50%; width: 200px; height: 200px; margin: 0 auto; display: flex; flex-direction: column; justify-content: center; border: 2px dashed var(--border-color); position: relative;">
+                    <div
+                        style="position: absolute; top: -10px; right: -10px; background: var(--accent-color); color: #000; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem;">
+                        4</div>
+                    <i class="fas fa-rocket"
+                        style="font-size: 2.5rem; color: var(--accent-color); margin-bottom: 10px;"></i>
+                    <h4 style="margin: 0; font-size: 1rem;">Deploy</h4>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section" style="background: rgba(31, 40, 51, 0.3);">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Client Testimonials</h2>
+            <div class="testimonial-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+
+                <div class="testimonial-card" data-aos="fade-right" data-aos-delay="100"
+                    style="background: var(--card-bg); padding: 2.5rem; border-radius: 15px; border-left: 4px solid var(--accent-color); position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                    <i class="fas fa-quote-left"
+                        style="font-size: 2.5rem; color: rgba(102, 252, 241, 0.15); position: absolute; top: 20px; right: 20px;"></i>
+                    <p style="font-style: italic; margin-bottom: 1.5rem; line-height: 1.6;">"Very clean UI and fast
+                        delivery. Madhav understood exactly what the project needed and delivered it flawlessly above
+                        expectations."</p>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <img src="https://ui-avatars.com/api/?name=Sarah+J&background=random" alt="Client"
+                            style="width: 50px; height: 50px; border-radius: 50%;">
+                        <div>
+                            <h4 style="margin: 0; color: var(--accent-color);">Sarah J.</h4>
+                            <span style="font-size: 0.85rem; color: #a0a0a0;">Project Manager</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-left" data-aos-delay="200"
+                    style="background: var(--card-bg); padding: 2.5rem; border-radius: 15px; border-left: 4px solid var(--accent-color); position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                    <i class="fas fa-quote-left"
+                        style="font-size: 2.5rem; color: rgba(102, 252, 241, 0.15); position: absolute; top: 20px; right: 20px;"></i>
+                    <p style="font-style: italic; margin-bottom: 1.5rem; line-height: 1.6;">"Great backend backend
+                        knowledge. The scalable APIs he built solved huge data-processing bottlenecks we were facing."
+                    </p>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <img src="https://ui-avatars.com/api/?name=David+M&background=random" alt="Client"
+                            style="width: 50px; height: 50px; border-radius: 50%;">
+                        <div>
+                            <h4 style="margin: 0; color: var(--accent-color);">David M.</h4>
+                            <span style="font-size: 0.85rem; color: #a0a0a0;">Tech Lead</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Hire Me CTA -->
+    <section class="hire-me section" data-aos="zoom-in"
+        style="text-align: center; padding: 4rem 1rem; margin: 4rem auto; max-width: 800px; background: linear-gradient(135deg, rgba(102,252,241,0.05), rgba(69,162,158,0.15)); border-radius: 20px; border: 1px solid var(--accent-color); box-shadow: 0 10px 30px rgba(102,252,241,0.1);">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: #fff;">Let's build your next big project!</h2>
+        <p style="font-size: 1.1rem; margin-bottom: 2.5rem; opacity: 0.9;">Available for freelance work, open-source
+            collaboration, and full-time opportunities.</p>
+        <a href="#contact" class="btn primary-btn"
+            style="font-size: 1.2rem; padding: 15px 40px; box-shadow: 0 10px 20px rgba(102,252,241,0.3);">🔥 Hire Me
+            Today</a>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications section">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Certifications</h2>
+            <div class="cert-grid">
+                <a href="Certificartions/JavaScript_Essentials_1_Badge20241202-25-o5puvg.pdf" target="_blank"
+                    class="cert-card" data-aos="zoom-in" data-aos-delay="100"
+                    style="display: block; text-decoration: none;">
+                    <i class="fab fa-js certification-icon"></i>
+                    <h4>JS Essentials 1</h4>
+                    <p>Cisco Certification</p>
+                </a>
+                <a href="Certificartions/JavaScript_Essentials_2_Badge20241202-26-qs0kry.pdf" target="_blank"
+                    class="cert-card" data-aos="zoom-in" data-aos-delay="125"
+                    style="display: block; text-decoration: none;">
+                    <i class="fab fa-js certification-icon"></i>
+                    <h4>JS Essentials 2</h4>
+                    <p>Cisco Certification</p>
+                </a>
+                <a href="Certificartions/Java%20Full%20Stack%20Development.jpeg" target="_blank" class="cert-card"
+                    data-aos="zoom-in" data-aos-delay="150" style="display: block; text-decoration: none;">
+                    <i class="fab fa-java certification-icon"></i>
+                    <h4>Java Certification</h4>
+                    <p>VSS Institute</p>
+                </a>
+                <a href="Certificartions/NPTEL.pdf" target="_blank" class="cert-card" data-aos="zoom-in"
+                    data-aos-delay="200" style="display: block; text-decoration: none;">
+                    <i class="fas fa-project-diagram certification-icon"></i>
+                    <h4>Data Structures through Java</h4>
+                    <p>NPTEL</p>
+                </a>
+                <a href="Certificartions/22R21A12D9%20PYTHON%20ONLINE%20CERTIFICATE%201.pdf" target="_blank"
+                    class="cert-card" data-aos="zoom-in" data-aos-delay="250"
+                    style="display: block; text-decoration: none;">
+                    <i class="fab fa-python certification-icon"></i>
+                    <h4>Python Certification</h4>
+                    <p>IBM</p>
+                </a>
+                <a href="Certificartions/Appreciation%20certificate(EWB%20forum%20event).jpeg" target="_blank"
+                    class="cert-card" data-aos="zoom-in" data-aos-delay="300"
+                    style="display: block; text-decoration: none;">
+                    <i class="fas fa-award certification-icon"></i>
+                    <h4>ESF-R, EWB-IUCEE</h4>
+                    <p>Appreciation Certificate</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Get In Touch</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info" data-aos="fade-right">
+                    <h3>Let's talk about everything!</h3>
+                    <p>Don't like forms? Send me an email. I'm always open to discussing web development, new projects,
+                        and creative ideas.</p>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span><a href="mailto:dattumadhav192d@gmail.com">dattumadhav192d@gmail.com</a></span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 9502489710</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/dattumadhav" target="_blank" class="social-icon" data-tooltip="GitHub"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/bathula-datta-madhav-b198122a5/" target="_blank"
+                            class="social-icon" data-tooltip="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://wa.me/919502489710" target="_blank" class="social-icon" data-tooltip="WhatsApp"><i
+                                class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form-container" data-aos="fade-left">
+                    <form id="contactForm" action="https://formsubmit.co/dattumadhav192d@gmail.com" method="POST" class="contact-form">
+                        <!-- Important: Formsubmit needs 'name' attributes on inputs to work properly -->
+                        <div class="form-group">
+                            <input type="text" name="name" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" id="message" rows="5" placeholder="Your Message"
+                                required></textarea>
+                        </div>
+                        <!-- Optional: Auto-return to portfolio after submission without captcha interruption -->
+                        <input type="hidden" name="_captcha" value="false">
+
+                        <button type="submit" class="btn primary-btn submit-btn">Send Message <i
+                                class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Bathula Datta Madhav. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/dattumadhav" target="_blank"><i class="fab fa-github"></i>
+                    github.com/dattumadhav</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Scripts -->
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <!-- Typed.js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Vanilla Tilt JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <!-- Custom script -->
+    <script src="script.js"></script>
+</body>
+
+</html>

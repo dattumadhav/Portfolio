@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="home.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header>
+    <nav>
+        <div id="logo">:Logo</div>
+        <div id="context">
+            <li><a href="#" id="home">Home</a></li>
+            <li><a href="browse.html" id="browse">Browse</a></li>
+            <li><a href="ratings.html" id="">recommendation</a></li>
+            <li><a href="#" id="commmunity">community</a></li>
+            <li><a href="#" id="">My Collection</a></li>
+        </div>
+        <div id="account">
+            <button id="signInButton" onclick="window.open('signin.html')">sign in</button>
+            <button id="profileButton" class="hidden" onclick="toggleSidebar()">
+                <span class="material-icons"> account_circle</span>
+            </button>
+        </div>
+    </nav>
+
+  <!-- sidebar -->
+    <div id="profile-sidebar" class="profile-sidebar">
+        <a href="javascript:void(0)" class="close-btn" onclick="toggleSidebar()">×</a>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </div>
+  
+
+</header>
+<main>
+    <div class="search-books">
+        <div>
+            <h1>Unlock the World of Books</h1>
+            <h3>Your ultimate destination for discovering new books, getting personalized recommendations,</h3> 
+            <h3> and connecting with fellow book lovers.</h3>
+        </div>
+        <div class="search-bar">
+            <div >
+                <span class="material-icons">search</span>
+                <input id="search" type="text" placeholder="Search for books, authors, lists and more" oninput="searchBooks()">
+                <div id="dropdown" class="dropdown"></div>
+            </div>
+        </div>
+    </div>
+<!-- bestsellsers -->
+<div class="bestseller-books">
+<h1>Bestsellers</h1>
+  <div class="books-container-wrapper">
+    <button class="scroll-button left" onclick="scrollLeftCustom()">&#9664;</button>
+    <div id="books-container" class="books-container"></div>
+    <button class="scroll-button right" onclick="scrollRight()">&#9654;</button>
+  </div>
+</div>
+<!-- recommend section -->
+<div class="recommendation-section">
+        <div class="recommendation-blog">
+            <h1>Uncover Your Next<br> Favorite Book</h1>
+            <h2>Discover curated reading lists and personalized book<br> recommendations to inspire your next <br>reading adventure.</h2>
+            <a href="ratings.html"><button onclick="getRecommendation()">Get Recommendation</button></a>
+        </div>  
+    <div class="right-side">
+        <img src="images/1.avif" height="500px" width="400px" alt="Inspirational Image">
+    </div>
+</div>
+     
+<!-- genere section -->
+<div class="genere-section">
+    <div class="genere-blog">
+        <h1>Featured Genre</h1>
+        <h2>Delve into the depths of Fantasy - where magic thrives and epic journeys await in every book.</h2>
+        <a href="browse.html"><button>Explore Genere</button></a>
+    </div>
+</div>
+</div>
+<div class="featured-collections">
+    <div class="collection" id="Personalised-lists">
+        <div>
+            <span class="material-icons">library_books</span>
+            <a href="#personalized-list"><h2>Personalized Book List</h2></a>
+    </div>
+        <p>Add books to your personal list and track your reading goals.</p>
+        
+    </div>
+    <div class="collection" id="ratings">
+        <div>
+            <span class="material-icons"> visibility </span>
+            <a href="#rating-reviews"><h2>Ratings and Reviews</h2></a>
+        </div>
+        <p>Share your thoughts on the books you've read by rating and writing reviews.</p>
+    </div>
+    <div class="collection" id="community-connect">
+        <div>
+            <span class="material-icons">cloud</span>
+            <a href="#community-connect"><h2>Community Connect</h2></a>
+        </div>
+        <p>Join communities based on genre and connect with fellow readers for recommendations.</p>
+    </div>
+</div>
+</main>
+
+<footer>
+
+</footer>
+
+  <script src="home.js"></script>
+</body>
+</html>

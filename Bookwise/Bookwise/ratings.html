@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Rating</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .search-bar {
+            margin-bottom: 20px;
+        }
+
+        .search-bar input {
+            width: 70%;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            background-color: #0056b3;
+        }
+
+        .book-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .book-item {
+            background-color: white;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 200px;
+        }
+
+        .book-item img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .rating {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .star {
+            font-size: 2em;
+            color: #ffd700;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .star.empty {
+            color: #ccc;
+        }
+
+        .top-right {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+        }
+
+        .top-right button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .top-right button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top-right">
+            <button id="show-ratings">I'm done Rating</button>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="search-query" placeholder="Search for books...">
+            <button id="search-button">Search</button>
+        </div>
+        <div class="book-list" id="book-list">
+            <!-- Book items will be injected here -->
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById('search-button').addEventListener('click', fetchBooks);
+            document.getElementById('show-ratings').addEventListener('click', function() {
+                window.location.href = 'myratings.html';
+            });
+
+            fetchBooks(); // Initial fetch to display popular books
+
+            async function fetchBooks() {
+                const query = document.getElementById('search-query').value || 'popular+books+2021';
+                const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=40`);
+                const data = await response.json();
+                displayBooks(data.items);
+            }
+
+            function displayBooks(books) {
+                const bookList = document.getElementById('book-list');
+                bookList.innerHTML = ''; // Clear previous results
+                const myRatings = JSON.parse(localStorage.getItem('myRatings')) || [];
+
+                books.forEach(book => {
+                    const bookItem = document.createElement('div');
+                    bookItem.classList.add('book-item');
+                    const bookRating = myRatings.find(r => r.bookId === book.id)?.rating || 0;
+
+                    bookItem.innerHTML = `
+                        <img src="${book.volumeInfo.imageLinks?.thumbnail || 'https://via.placeholder.com/150x200'}" alt="${book.volumeInfo.title}">
+                        <h3>${book.volumeInfo.title}</h3>
+                        <p>Rate it:</p>
+                        <div class="rating" data-book-id="${book.id}" data-rating="${bookRating}">
+                            <span class="star ${bookRating >= 1 ? '' : 'empty'}" data-value="1">&#9733;</span>
+                            <span class="star ${bookRating >= 2 ? '' : 'empty'}" data-value="2">&#9733;</span>
+                            <span class="star ${bookRating >= 3 ? '' : 'empty'}" data-value="3">&#9733;</span>
+                            <span class="star ${bookRating >= 4 ? '' : 'empty'}" data-value="4">&#9733;</span>
+                            <span class="star ${bookRating >= 5 ? '' : 'empty'}" data-value="5">&#9733;</span>
+                        </div>
+                    `;
+                    bookList.appendChild(bookItem);
+                });
+
+                document.querySelectorAll('.star').forEach(star => {
+                    star.addEventListener('click', handleRating);
+                });
+            }
+
+            function handleRating(event) {
+                const star = event.target;
+                const rating = star.dataset.value;
+                const ratingDiv = star.closest('.rating');
+                const stars = ratingDiv.querySelectorAll('.star');
+                stars.forEach(star => {
+                    if (star.dataset.value <= rating) {
+                        star.classList.remove('empty');
+                    } else {
+                        star.classList.add('empty');
+                    }
+                });
+
+                ratingDiv.dataset.rating = rating;
+
+                // Save rating in localStorage
+                const myRatings = JSON.parse(localStorage.getItem('myRatings')) || [];
+                const bookId = ratingDiv.dataset.bookId;
+                const existingRating = myRatings.find(r => r.bookId === bookId);
+                if (existingRating) {
+                    existingRating.rating = rating;
+                } else {
+                    myRatings.push({ bookId, rating });
+                }
+                localStorage.setItem('myRatings', JSON.stringify(myRatings));
+            }
+        });
+    </script>
+</body>
+</html>

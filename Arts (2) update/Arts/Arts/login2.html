@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login-form--ARTEM</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <img src="logo.png" width="100px">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home <i class="fa-solid fa-house"></i></a></li>
+                    <li><a href="products.php">Products <i class="fa-solid fa-palette"></i></a></li>
+                    <li><a href="about.html">About <i class="fa-regular fa-address-card"></i></a></li>
+                    <li><a href="contact.html">Contact <i class="fa-solid fa-phone"></i></a></li>
+                    <li><a href="login.php">Account <i class="fa-solid fa-user"></i></a></li>
+                    <li><a href="cart.php" id="cart-icon" data-quantity="0"><i class="fa-solid fa-bag-shopping"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <section>
+        <div class="cube">
+            <div class="form-box">
+                <div class="button-box">
+                    <button type="button" class="toggle-btn" onclick="showLogin()">Login</button>
+                    <button type="button" class="toggle-btn" onclick="showRegister()">Register</button>
+                </div>
+
+                <!-- Login Form -->
+                <form id="login-form" class="input-group" action="#" method="POST" onsubmit="return handleLogin(event)">
+                    <input type="text" name="username" class="input-field" placeholder="Username" required>
+                    <input type="password" name="password" class="input-field" placeholder="Password" required>
+                    <input type="checkbox" class="check-box"><span>Remember password</span>
+                    <button type="submit" class="submit-btn">Login</button>
+                </form>
+
+                <!-- Register Form -->
+                <form id="register-form" class="input-group" action="#" method="POST" onsubmit="return handleRegister(event)">
+                    <input type="text" name="username" class="input-field" placeholder="Username" required>
+                    <input type="password" name="password" class="input-field" placeholder="Password" required>
+                    <input type="checkbox" id="terms-checkbox" class="check-box"><span>I agree to terms & conditions</span>
+                    <button type="submit" class="submit-btn">Register</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function showLogin() {
+            document.getElementById("login-form").style.display = "block";
+            document.getElementById("register-form").style.display = "none";
+        }
+
+        function showRegister() {
+            document.getElementById("login-form").style.display = "none";
+            document.getElementById("register-form").style.display = "block";
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            showLogin();
+        });
+
+        function handleLogin(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+            Swal.fire({
+                title: "Login Successful!",
+                text: "Redirecting to home page...",
+                icon: "success",
+                timer: 2000,
+                showConfirmButton: false
+            }).then(() => {
+                window.location.href = "index.html";
+            });
+            return false;
+        }
+
+        function handleRegister(event) {
+            event.preventDefault(); // Prevent normal form submission
+
+            // Get the checkbox element
+            let termsCheckbox = document.getElementById("terms-checkbox");
+
+            // Check if the terms and conditions checkbox is checked
+            if (!termsCheckbox.checked) {
+                Swal.fire({
+                    title: "Error",
+                    text: "You must agree to the terms & conditions to register.",
+                    icon: "error"
+                });
+                return false; // Prevent form submission
+            }
+
+            // If checked, show success message and switch to login
+            Swal.fire({
+                title: "Registration Successful!",
+                text: "You can now log in.",
+                icon: "success",
+                timer: 2000,
+                showConfirmButton: false
+            }).then(() => {
+                showLogin();
+            });
+
+            return false;
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+</body>
+</html>

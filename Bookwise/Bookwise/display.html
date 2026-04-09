@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="display.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div id="logo">:Logo</div>
+            <div id="context">
+                <li><a href="#" id="home">Home</a></li>
+                <li><a href="browse.html" id="browse">Browse</a></li>
+                <li><a href="#" id="">recommendation</a></li>
+                <li><a href="#" id="commmunity">community</a></li>
+                <li><a href="#" id="">My Collection</a></li>
+            </div>
+            <div id="account">
+                <button id="signInButton" onclick="window.open('signin.html')">sign in</button>
+                <button id="profileButton" class="hidden" onclick="toggleSidebar()">
+                    <span class="material-icons"> account_circle</span>
+                </button>
+            </div>
+        </nav>
+    
+      <!-- sidebar -->
+        <div id="profile-sidebar" class="profile-sidebar">
+            <a href="javascript:void(0)" class="close-btn" onclick="toggleSidebar()">×</a>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+    </header>
+    <main>
+    <div class="container">
+        <div class="book-details">
+            <div class="book-image">
+                <img id="book-cover" src="" alt="Book Cover">
+                <div class="rating" id="rating-div">
+                    <span class="star empty" data-value="1">&#9733;</span>
+                    <span class="star empty" data-value="2">&#9733;</span>
+                    <span class="star empty" data-value="3">&#9733;</span>
+                    <span class="star empty" data-value="4">&#9733;</span>
+                    <span class="star empty" data-value="5">&#9733;</span>
+                </div>
+                <div class="book-actions">
+                    <button id="add-to-list">Add to List</button>
+                    <button id="save-rating">Save Rating</button>
+                </div>
+            </div>
+            <div class="book-info">
+                <h1 id="book-title">Book Title</h1>
+                <h3 id="book-authors">Authors</h3>
+                <p id="book-publisher">Publisher: </p>
+                <p id="book-published-date">Published Date: </p>
+                <p id="book-categories">Categories: </p>
+                <p id="book-average-rating">Average Rating: </p>
+                <p id="book-description">Description: </p>
+                <a id="book-preview" href="#">preview</a>
+                <a id="book-link" href="#" target="_blank">More Info</a>
+            </div>
+        </div>
+    </div>
+</main>
+    <script src="display.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Login Page | CodingNepal</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <nav>
+        <a href="#"><img src="images/logo.svg" alt="logo"></a>
+    </nav>
+    <div class="form-wrapper">
+        <h2>Sign Up</h2>
+        <form id="signup-form" action="#">
+            <div class="form-control">
+                <input type="text" id="name" required>
+                <label>Your Name</label>
+            </div>
+            <div class="form-control">
+                <input type="text" id="email-phone" required>
+                <label>Email or phone number</label>
+            </div>
+            <div class="form-control">
+                <input type="password" id="password" required>
+                <label>Password</label>
+                <span id="checkPassword">*Password must be at least 6 characters long</span>
+            </div>
+            <div class="form-control">
+                <input type="password" id="confirm-password" required>
+                <label>Confirm Password</label>
+                <span id="unmatched" style="color:red; display:none;">*password is incorrect</span>
+            </div>
+            <button type="submit">Sign In</button>
+            <div class="form-help"> 
+                <div class="remember-me">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Remember me</label>
+                </div>
+                <a href="#">Need help?</a>
+            </div>
+        </form>
+        <p>Already a member? <a href="signin.html">Sign in now</a></p>
+      
+    </div>
+    <script>
+        document.getElementById('signup-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting
+
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const emailPhone = document.getElementById('email-phone').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const confirmPassword = document.getElementById('confirm-password').value.trim();
+            const unmatchedMessage = document.getElementById('unmatched');
+            const checkPassword = document.getElementById('checkPassword');
+
+            // Validate inputs
+            
+    
+            if (password.length < 6) {
+                checkPassword.style.display='block';
+                checkPassword.style.color='red';
+                return;
+            }
+            if (password !== confirmPassword) {
+                unmatchedMessage.style.display = 'block';
+                unmatchedMessage.style.color='red';
+                return;
+            } else {
+                unmatchedMessage.style.display = 'none';
+            }
+
+            // If all validations pass, redirect to signin
+            alert('Sign up successful! Please sign in.');
+            window.location.href = 'signin.html';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommendation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        #search-bar {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        .dropdown {
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            max-height: 300px;
+            overflow-y: auto;
+            background-color: white;
+            display: none;
+            width: 650px;
+            margin: 10px auto 0 auto; /* Center the dropdown */
+        }
+
+        .book-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .book-item:hover {
+            background-color: #f0f0f0;
+        }
+
+        .book-image {
+            width: 50px;
+            height: 75px;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .book-title {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Book Recommendation</h1>
+        <input type="text" id="search-bar" placeholder="Search for a book..." oninput="searchBooks()">
+        <div id="dropdown" class="dropdown"></div>
+    </div>
+
+    <script>
+        const apiKey = 'AIzaSyAPg4INxVOy4lFVx3G5rhEU0bzd0LbLfWk';
+        const searchBar = document.getElementById('search-bar');
+        const dropdown = document.getElementById('dropdown');
+
+        async function searchBooks() {
+            const query = searchBar.value.trim();
+            if (!query) {
+                dropdown.style.display = 'none';
+                return;
+            }
+
+            const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}&key=${apiKey}`);
+            const data = await response.json();
+
+            if (!query || data.totalItems === 0) {
+                dropdown.innerHTML = '<div class="book-item">Not found</div>';
+                dropdown.style.display = !query ? 'none' : 'block';
+            } else {
+                dropdown.innerHTML = data.items.map(book => {
+                    const thumbnail = book.volumeInfo.imageLinks?.thumbnail || 'https://via.placeholder.com/50x75';
+                    const title = book.volumeInfo.title;
+
+                    return `
+                        <div class="book-item" onclick="redirectToBook('${book.id}')">
+                            <img src="${thumbnail}" alt="${title}" class="book-image">
+                            <div class="book-title">${title}</div>
+                        </div>
+                    `;
+                }).join('');
+                dropdown.style.display = 'block';
+            }
+        }
+
+        function redirectToBook(bookId) {
+            window.location.href = `display.html?bookId=${bookId}`;
+        }
+    </script>
+</body>
+</html>

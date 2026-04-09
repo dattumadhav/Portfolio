@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madhav's AI Assistant</title>
+    <meta name="description" content="Chat with Madhav's AI assistant to learn about his skills, projects, experience, and how to contact him.">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #0b0c10;
+            --text-color: #c5c6c7;
+            --accent-color: #66FCF1;
+            --card-bg: #1f2833;
+            --user-msg: #45a29e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            background-image: radial-gradient(circle at top right, rgba(102, 252, 241, 0.1), transparent 400px);
+        }
+
+        .chat-container {
+            width: 90%;
+            max-width: 800px;
+            height: 85vh;
+            background: rgba(31, 40, 51, 0.7);
+            border-radius: 20px;
+            border: 1px solid rgba(102, 252, 241, 0.2);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            padding: 20px;
+            background: rgba(31, 40, 51, 0.9);
+            border-bottom: 1px solid rgba(102, 252, 241, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .chat-header .bot-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .bot-avatar {
+            width: 45px;
+            height: 45px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-size: 1.5rem;
+            box-shadow: 0 0 15px rgba(102, 252, 241, 0.4);
+        }
+
+        .bot-details h3 {
+            color: #fff;
+            font-size: 1.1rem;
+        }
+
+        .bot-details p {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #4CAF50;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .home-link {
+            text-decoration: none;
+            color: var(--text-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            border: 1px solid var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        .home-link:hover {
+            background: var(--text-color);
+            color: var(--bg-color);
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent-color) rgba(0,0,0,0);
+        }
+
+        .chat-messages::-webkit-scrollbar {
+            width: 6px;
+        }
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: var(--accent-color);
+            border-radius: 10px;
+        }
+
+        .message {
+            max-width: 75%;
+            padding: 12px 18px;
+            border-radius: 18px;
+            line-height: 1.5;
+            font-size: 0.95rem;
+            animation: fadeIn 0.3s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .message.bot {
+            align-self: flex-start;
+            background: rgba(102, 252, 241, 0.1);
+            border: 1px solid rgba(102, 252, 241, 0.2);
+            border-bottom-left-radius: 2px;
+            color: #fff;
+        }
+
+        .message.user {
+            align-self: flex-end;
+            background: var(--user-msg);
+            color: #fff;
+            border-bottom-right-radius: 2px;
+        }
+
+        .typing-indicator {
+            display: none;
+            padding: 12px 18px;
+            align-self: flex-start;
+            background: rgba(102, 252, 241, 0.05);
+            border-radius: 18px;
+            border-bottom-left-radius: 2px;
+            border: 1px solid rgba(102, 252, 241, 0.1);
+        }
+
+        .typing-indicator span {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            margin-right: 5px;
+            animation: typing 1.4s infinite ease-in-out both;
+        }
+
+        .typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+        .typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+
+        @keyframes typing {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
+
+        .chat-input-area {
+            padding: 20px;
+            background: rgba(31, 40, 51, 0.9);
+            border-top: 1px solid rgba(102, 252, 241, 0.1);
+            display: flex;
+            gap: 15px;
+        }
+
+        #user-input {
+            flex: 1;
+            padding: 15px 20px;
+            border-radius: 30px;
+            border: 1px solid rgba(102, 252, 241, 0.3);
+            background: rgba(0, 0, 0, 0.3);
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        #user-input:focus {
+            border-color: var(--accent-color);
+        }
+
+        #send-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            background: var(--accent-color);
+            color: #000;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(102, 252, 241, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #send-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(102, 252, 241, 0.5);
+        }
+        
+        .quick-replies {
+            padding: 0 20px 15px 20px;
+            background: rgba(31, 40, 51, 0.9);
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .quick-replies::-webkit-scrollbar { display: none; }
+
+        .quick-btn {
+            background: transparent;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            padding: 6px 14px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+
+        .quick-btn:hover {
+            background: rgba(102, 252, 241, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="bot-info">
+                <div class="bot-avatar"><i class="fas fa-robot"></i></div>
+                <div class="bot-details">
+                    <h3>Madhav AI Bot</h3>
+                    <p><span class="status-dot"></span> Online - Ready to answer</p>
+                </div>
+            </div>
+            <a href="index.html" class="home-link"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+        </div>
+
+        <div class="chat-messages" id="chat-messages">
+            <div class="message bot">
+                Hello! 👋 I'm Madhav's personal AI assistant. You can ask me about his skills, projects, experience, or how to contact him. What would you like to know?
+            </div>
+            <div class="typing-indicator" id="typing-indicator">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+
+        <div class="quick-replies">
+            <button class="quick-btn" onclick="sendQuickMessage('What are your skills?')">What are your skills?</button>
+            <button class="quick-btn" onclick="sendQuickMessage('Tell me about your projects')">Tell me about your projects</button>
+            <button class="quick-btn" onclick="sendQuickMessage('How can I contact Madhav?')">How can I contact Madhav?</button>
+            <button class="quick-btn" onclick="sendQuickMessage('What is your experience?')">What is your experience?</button>
+        </div>
+
+        <div class="chat-input-area">
+            <input type="text" id="user-input" placeholder="Type your message here..." onkeypress="handleKeyPress(event)">
+            <button id="send-btn" onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <script>
+        const chatMessages = document.getElementById('chat-messages');
+        const userInput = document.getElementById('user-input');
+        const typingIndicator = document.getElementById('typing-indicator');
+
+        const botData = {
+            greetings: ["Hello there! How can I help you today?", "Hi! I'm Madhav's AI. What would you like to know about him?", "Greetings! Let's talk about Madhav's impressive skills and projects."],
+            skills: "Madhav is highly skilled in Java, JavaScript, Python, HTML5, CSS3, PHP, and MySQL. He's also great at Data Structures & Algorithms and uses tools like Git, Jenkins, and Maven.",
+            projects: "Madhav has built several amazing PRO-level projects:<br>1. <b>AI Multimodal Assistant</b> (Python/NLP)<br>2. <b>Canva Chronicles</b> (PHP/MySQL Art Gallery)<br>3. <b>Book Wise Recommendation</b> (Java/Algo)<br>4. <b>Lovely Movies</b> (Responsive UI)<br>Check out the Projects section on the home page for live demos!",
+            experience: "Madhav was a Software Intern at Plasmid where he gained real-world application building skills. He also won 1st Prize in an Innovation Event for his Plastic to Electricity research, winning a gold medal and ₹15,000!",
+            contact: "You can reach Madhav directly at <b>dattumadhav192d@gmail.com</b> or call him at <b>+91 9502489710</b>. He's always open to discussing web development and creative ideas!",
+            hire: "Absolutely! Madhav is available for freelance work, open-source collaboration, and full-time opportunities. Send him an email to get started!",
+            education: "Madhav is currently pursuing his B.Tech in Information Technology at MLR Institution of Technology (2022–2026) with an excellent CGPA of 8.33.",
+            default: "I'm sorry, I'm just a simple bot. I didn't quite catch that. Try asking me about Madhav's <b>skills</b>, <b>projects</b>, <b>experience</b>, or how to <b>contact</b> him!"
+        };
+
+        function addMessage(text, sender) {
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `message ${sender}`;
+            msgDiv.innerHTML = text;
+            chatMessages.insertBefore(msgDiv, typingIndicator);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function showTyping() {
+            typingIndicator.style.display = 'block';
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function hideTyping() {
+            typingIndicator.style.display = 'none';
+        }
+
+        function generateBotResponse(input) {
+            input = input.toLowerCase();
+            
+            if (input.includes("hi") || input.includes("hello") || input.includes("hey")) {
+                return botData.greetings[Math.floor(Math.random() * botData.greetings.length)];
+            } else if (input.includes("skill") || input.includes("know") || input.includes("tech") || input.includes("language")) {
+                return botData.skills;
+            } else if (input.includes("project") || input.includes("build") || input.includes("work")) {
+                return botData.projects;
+            } else if (input.includes("experience") || input.includes("intern") || input.includes("award")) {
+                return botData.experience;
+            } else if (input.includes("contact") || input.includes("email") || input.includes("phone") || input.includes("reach")) {
+                return botData.contact;
+            } else if (input.includes("hire") || input.includes("job") || input.includes("freelance")) {
+                return botData.hire;
+            } else if (input.includes("education") || input.includes("study") || input.includes("college")) {
+                return botData.education;
+            } else {
+                return botData.default;
+            }
+        }
+
+        function handleKeyPress(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        function sendQuickMessage(text) {
+            userInput.value = text;
+            sendMessage();
+        }
+
+        function sendMessage() {
+            const text = userInput.value.trim();
+            if (text === '') return;
+
+            addMessage(text, 'user');
+            userInput.value = '';
+
+            showTyping();
+
+            setTimeout(() => {
+                hideTyping();
+                const response = generateBotResponse(text);
+                addMessage(response, 'bot');
+            }, 800 + Math.random() * 700); // Random delay between 800ms to 1500ms
+        }
+    </script>
+</body>
+</html>

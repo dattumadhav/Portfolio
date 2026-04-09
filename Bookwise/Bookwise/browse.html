@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Library</title>
+    <link rel="stylesheet" href="browse.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+</head>
+<body>
+    <header>
+        <nav>
+            <div id="logo">:Logo</div>
+            <div id="context">
+                <li><a href="#" id="home">Home</a></li>
+                <li><a href="#" id="browse">Browse</a></li>
+                <li><a href="#" id="recommendation">Recommendation</a></li>
+                <li><a href="#" id="community">Community</a></li>
+                <li><a href="#" id="collection">My Collection</a></li>
+            </div>
+            <div id="account">
+                <button id="signInButton" onclick="window.open('signin.html')">sign in</button>
+                <button id="profileButton" class="hidden" onclick="toggleSidebar()">
+                    <span class="material-icons"> account_circle</span>
+                </button>
+            </div>
+        </nav>
+        <!-- sidebar -->
+        <div id="profile-sidebar" class="profile-sidebar">
+            <a href="javascript:void(0)" class="close-btn" onclick="toggleSidebar()">×</a>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <nav class="sidebar">
+                <h2>Genres</h2>
+                <ul id="genre-list">
+                    <!-- Genres will be dynamically populated here -->
+                </ul>
+            </nav>
+            <div class="main-content">
+                <article>
+                    <input type="text" id="search-bar" placeholder="Search for books...">
+                    <button id="search-button">Search</button>
+                </article>
+                <section id="book-list">
+                    <!-- Books will be dynamically populated here -->
+                </section>
+            </div>
+        </div>
+    </main>
+    <script src="browse.js"></script>
+</body>
+</html>
